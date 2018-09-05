@@ -4,6 +4,7 @@ package com.test.swt;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -67,12 +68,12 @@ public class Test extends AbstractExample {
             Label roleLabel = new Label(group,SWT.NONE);
             roleLabel.setText("role:");
             
-            roleCombo = new Combo(group,SWT.DROP_DOWN);
+            roleCombo = new Combo(group,SWT.DROP_DOWN|SWT.READ_ONLY);
             roleCombo.setItems(new String[]{"Admin","custom"});
             roleCombo.select(1);
         }
         
-            new Label(group,SWT.NONE);
+            new Label(group,SWT.NONE); //当没有空间元素填补的时候，为了防止布局错乱，创建了一个空的Label对象用来占位
             rememberPWBtn = new Button(group,SWT.CHECK);
             rememberPWBtn.setText("记住密码");
 
