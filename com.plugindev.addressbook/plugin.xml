@@ -34,5 +34,30 @@
             file="contexts.xml">
       </contexts>
    </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.plugindev.addressbook.actions.actionSet"
+            label="地址本操作"
+            visible="true">
+         <menu
+               id="com.plugindev.addressbook.menu.Menu"
+               label="地址本"
+               path="additions">
+            <separator
+                  name="content">
+            </separator>
+         </menu>
+         <action
+               class="com.plugindev.addressbook.actions.OpenAddressViewAction"
+               icon="icons/sample.png"
+               id="com.plugindev.addressbook.actions.OpenAddressViewAction"
+               label="打开视图"
+               menubarPath="com.plugindev.addressbook.menu.Menu/content"
+               toolbarPath="Normal/addition"
+               tooltip="在当前透视图中打开地址本视图">
+         </action>
+      </actionSet>
+   </extension>
 
 </plugin>
