@@ -10,7 +10,7 @@
       <view
             id="com.plugindev.addressbook.views.AddressView"
             name="地址本视图"
-            icon="icons/sample.png"
+            icon="icons/sample.gif"
             class="com.plugindev.addressbook.views.AddressView"
             category="com.plugindev.addressbook"
             inject="true">

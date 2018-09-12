@@ -56,7 +56,7 @@ public class UsingTable {
 		table.setLinesVisible(true);
 		
 		TableColumn tblclmnNewColumn = new TableColumn(table, SWT.NONE);
-		tblclmnNewColumn.setWidth(220);
+		tblclmnNewColumn.setWidth(188);
 		tblclmnNewColumn.setText("col1");
 		
 		TableColumn tblclmnNewColumn_1 = new TableColumn(table, SWT.NONE);
