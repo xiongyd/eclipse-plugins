@@ -1,4 +1,4 @@
-package com.plugindev.addressbook.actions;
+package com.plugindev.addressbook.actions.example;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;

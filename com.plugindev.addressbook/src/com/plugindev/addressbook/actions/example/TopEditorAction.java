@@ -1,4 +1,4 @@
-package com.plugindev.addressbook.actions;
+package com.plugindev.addressbook.actions.example;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -6,7 +6,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IEditorActionDelegate;
 import org.eclipse.ui.IEditorPart;
 
-public class EditorExampleAction implements IEditorActionDelegate {
+public class TopEditorAction implements IEditorActionDelegate {
 
 	private IEditorPart targetEditor;
 	

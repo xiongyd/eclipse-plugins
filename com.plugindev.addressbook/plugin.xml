@@ -76,7 +76,7 @@
             </separator>
          </menu>
          <action
-               class="com.plugindev.addressbook.actions.ObjAction"
+               class="com.plugindev.addressbook.actions.example.ObjAction"
                enablesFor="1"
                id="com.plugindev.addressbook.actions.objAction"
                label="对象示例操作"
@@ -96,7 +96,7 @@
             </separator>
          </menu>
          <action
-               class="com.plugindev.addressbook.actions.ViewerAction"
+               class="com.plugindev.addressbook.actions.example.ViewerAction"
                enablesFor="+"
                id="com.plugindev.addressbook.actions.viewerAction"
                label="查看器示列操作"
@@ -116,7 +116,7 @@
             </separator>
          </menu>
          <action
-               class="com.plugindev.addressbook.actions.EditorExampleAction"
+               class="com.plugindev.addressbook.actions.example.EditorExampleAction"
                icon="icons/sample.png"
                id="com.plugindev.addressbook.actions.EditorExampleAction"
                label="编辑器操作"
@@ -131,7 +131,7 @@
             id="com.plugindev.addressbook.viewContribution1"
             targetID="com.plugindev.addressbook.views.AddressView">
          <action
-               class="com.plugindev.addressbook.actions.ViewAction"
+               class="com.plugindev.addressbook.actions.example.ViewAction"
                icon="icons/sample.png"
                id="com.plugindev.addressbook.viewAction"
                label="视图操作"
@@ -164,7 +164,7 @@
             </separator>
          </menu>
          <action
-               class="com.plugindev.addressbook.actions.TopEditorAction"
+               class="com.plugindev.addressbook.actions.example.TopEditorAction"
                id="com.plugindev.addressbook.actions.topEditorAction"
                label="顶层编辑器操作"
                menubarPath="com.plugindev.addressbook.menu.defaultEditorMenu/example"
