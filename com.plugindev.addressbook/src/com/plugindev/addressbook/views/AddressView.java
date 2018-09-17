@@ -34,14 +34,17 @@ import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchActionConstants;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
 import com.plugindev.addressbook.Activator;
 import com.plugindev.addressbook.actions.AddAddressAction;
 import com.plugindev.addressbook.actions.AddressViewerFilterAction;
 import com.plugindev.addressbook.actions.DeleteAddressAction;
+import com.plugindev.addressbook.editors.models.SimpleFormEditorInput;
 import com.plugindev.addressbook.models.AddressItem;
 import com.plugindev.addressbook.models.AddressManager;
 import com.plugindev.addressbook.util.ImageKeys;
@@ -147,7 +150,7 @@ public class AddressView extends ViewPart implements ISelectionListener {
 		// 为视图添加行为
 		makeActions();
 		hookContextMenu();
-		hookDoubleClickAction();
+		hookDoubleClickAction(); //监听双击事件
 		contributeToActionBars();
 		hookKeyboardActions();
 
@@ -258,25 +261,20 @@ public class AddressView extends ViewPart implements ISelectionListener {
 		manager.add(addAction);
 	}
 
-	private void makeActions() {
-		/*
-		 * action1 = new Action() { public void run() {
-		 * showMessage("Action 1 executed"); } }; action1.setText("Action 1");
-		 * action1.setToolTipText("Action 1 tooltip");
-		 * action1.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().
-		 * getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
-		 * 
-		 * action2 = new Action() { public void run() {
-		 * showMessage("Action 2 executed"); } }; action2.setText("Action 2");
-		 * action2.setToolTipText("Action 2 tooltip");
-		 * action2.setImageDescriptor(workbench.getSharedImages().
-		 * getImageDescriptor(ISharedImages.IMG_OBJS_INFO_TSK));
-		 */
+	private void makeActions() {		
+		//创建双击操作
 		doubleClickAction = new Action() {
 			public void run() {
 				IStructuredSelection selection = viewer.getStructuredSelection();
-				Object obj = selection.getFirstElement();
-				showMessage("Double-click detected on " + obj.toString());
+				AddressItem obj = (AddressItem) selection.getFirstElement();
+				IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+				SimpleFormEditorInput input = new SimpleFormEditorInput(obj.getName());
+				try {
+					page.openEditor(input, "com.plugindev.addressbook.tableEditor");
+				} catch (PartInitException e) {
+					e.printStackTrace();
+				}
+				//showMessage("Double-click detected on " + obj.toString());
 			}
 		};
 
@@ -294,6 +292,7 @@ public class AddressView extends ViewPart implements ISelectionListener {
 		filterAction = new AddressViewerFilterAction(viewer, "过滤...", filterImage);
 	}
 
+	//监听双击事件
 	private void hookDoubleClickAction() {
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 			public void doubleClick(DoubleClickEvent event) {
@@ -302,9 +301,9 @@ public class AddressView extends ViewPart implements ISelectionListener {
 		});
 	}
 
-	private void showMessage(String message) {
-		MessageDialog.openInformation(viewer.getControl().getShell(), "地址本视图", message);
-	}
+//	private void showMessage(String message) {
+//		MessageDialog.openInformation(viewer.getControl().getShell(), "地址本视图", message);
+//	}
 
 	@Override
 	public void setFocus() {

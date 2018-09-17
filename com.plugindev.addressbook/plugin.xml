@@ -196,5 +196,16 @@
             sequence="Ctrl+Shift+V">
       </key>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.plugindev.addressbook.editors.AddressFormEditor"
+            contributorClass="com.plugindev.addressbook.editors.AddressFormEditorContributor"
+            default="true"
+            icon="icons/editors/editor.gif"
+            id="com.plugindev.addressbook.tableEditor"
+            name="地址本编辑器">
+      </editor>
+   </extension>
 
 </plugin>
