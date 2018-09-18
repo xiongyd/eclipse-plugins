@@ -207,5 +207,32 @@
             name="地址本编辑器">
       </editor>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.plugindev.addressbook.perspectives.AddressBookPerspectiveFactory"
+            icon="icons/perspectives/perspective.gif"
+            id="com.plugindev.addressbook.AddressBookPerspective"
+            name="AddressBook">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.plugindev.addressbook.AddressBookPerspective">
+         <view
+               id="org.eclipse.ui.console.ConsoleView"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.PropertySheet">
+         </view>
+         <viewShortcut
+               id="com.plugindev.addressbook.views.AddressView">
+         </viewShortcut>
+         <perspectiveShortcut
+               id="com.plugindev.addressbook.AddressBookPerspective">
+         </perspectiveShortcut>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>
