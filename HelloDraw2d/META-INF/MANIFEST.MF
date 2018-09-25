@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HelloDraw2d
+Bundle-SymbolicName: HelloDraw2d
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hellodraw2d.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.draw2d;bundle-version="3.10.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: HelloDraw2d
+Bundle-ActivationPolicy: lazy
