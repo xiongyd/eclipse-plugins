@@ -234,5 +234,28 @@
          </perspectiveShortcut>
       </perspectiveExtension>
    </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="com.plugindev.addressbook.wizards.NewAddressItemWizard"
+            icon="icons/wizards/new_add_wiz.gif"
+            id="com.plugindev.addressbook.wizards.newAddressItemWizard"
+            name="新建地址元素">
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.plugindev.addressbook.preferences.AddressPreferencePage"
+            id="com.plugindev.addressbook.preferences.AddressPreferencePage"
+            name="地址本">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.plugindev.addressbook.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
 
 </plugin>

@@ -241,4 +241,8 @@ public class AddressListManager {
 			fireManagerChanged(object, IManagerListener.REMOVED, "", "");
 		}
 	}
+
+	public void removeAll() {
+		objects.removeAll(objects);
+	}
 }

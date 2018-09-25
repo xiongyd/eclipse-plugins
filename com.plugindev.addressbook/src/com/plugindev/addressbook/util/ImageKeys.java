@@ -36,6 +36,9 @@ public class ImageKeys {
 	public static final String IMG_SCROL_AREA = "icons/editors/area.gif";
 	public static final String IMG_SCROL_CONTACT = "icons/editors/contact.gif";
 
+	//向导相关
+	public static final String IMG_WIZARD_NEW = "icons/wizards/new_wiz.gif";
+		
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return Activator.getImageDescriptor(path);
 	}
